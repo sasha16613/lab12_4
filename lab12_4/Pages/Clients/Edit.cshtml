@@ -1,0 +1,64 @@
+﻿@page
+@model lab12_4.Pages.Clients.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Client</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CreatedClient.ClientID" />
+            <input type="hidden" asp-for="CreatedVisa.VisaID" />
+            <input type="hidden" asp-for="CreatedTour.TourID" />
+            <div class="form-group">
+                <label asp-for="CreatedClient.Surename" class="control-label"></label>
+                <input asp-for="CreatedClient.Surename" class="form-control" />
+                <span asp-validation-for="CreatedClient.Surename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedClient.Name" class="control-label"></label>
+                <input asp-for="CreatedClient.Name" class="form-control" />
+                <span asp-validation-for="CreatedClient.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CreatedVisa.VisaName" class="control-label"></label>
+                <input asp-for="CreatedVisa.VisaName" class="form-control" />
+                <span asp-validation-for="CreatedVisa.VisaName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedVisa.VisaPrice" class="control-label"></label>
+                <input asp-for="CreatedVisa.VisaPrice" class="form-control" />
+                <span asp-validation-for="CreatedVisa.VisaPrice" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CreatedTour.Price" class="control-label"></label>
+                <input asp-for="CreatedTour.Price" class="form-control" />
+                <span asp-validation-for="CreatedTour.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedTour.Country" class="control-label"></label>
+                <input asp-for="CreatedTour.Country" class="form-control" />
+                <span asp-validation-for="CreatedTour.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
